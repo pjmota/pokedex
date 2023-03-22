@@ -1,0 +1,25 @@
+<app-poke-search> </app-poke-search>
+<section class="listagem">
+  <ng-template ngIf="allPokemons">
+    <a
+      [routerLink]="['/details', pokemon.status?.id]"
+      class="pokemon"
+      *ngFor="let pokemon of allPokemonsFiltered"
+    >
+      <section class="pokemon__status" *ngIf="pokemon.status">
+        <h2>{{ pokemon.name }}</h2>
+        <ul>
+          <li *ngFor="let value of pokemon.status.types">
+            {{ value.type.name }}
+          </li>
+        </ul>
+      </section>
+      <section class="pokemon__image" *ngIf="pokemon.status">
+        <img
+          [src]="pokemon.status.sprites.other.home.front_default"
+          [alt]="pokemon.name"
+        />
+      </section>
+    </a>
+  </ng-template>
+</section>
