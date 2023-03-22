@@ -23,6 +23,7 @@ export class PokeCardsComponent implements OnInit {
 
   getPokemonList() {
 
+    //forma para tentativa porém com o mesmo resultado
     this.pokemonService.getPokemonListTeste()
       .subscribe({
         next: (response: any) => {
@@ -47,12 +48,14 @@ export class PokeCardsComponent implements OnInit {
         }
       })
 
+
+    //original que fizemos
     this.pokemonService.getPokemonList()
-      /* .pipe(
+      .pipe(
         finalize(() => {
 
         })
-      ) */
+      )
       .subscribe({
         next: (response: any) => {
           this.allPokemons = response;
