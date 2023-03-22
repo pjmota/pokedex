@@ -48,11 +48,11 @@ export class PokeCardsComponent implements OnInit {
       })
 
     this.pokemonService.getPokemonList()
-      .pipe(
+      /* .pipe(
         finalize(() => {
 
         })
-      )
+      ) */
       .subscribe({
         next: (response: any) => {
           this.allPokemons = response;
